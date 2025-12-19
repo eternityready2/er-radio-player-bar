@@ -170,7 +170,7 @@ export const PlayerProvider = (props) => {
 
       playerListener = new IcecastMetadataPlayer(
           props?.externalStation ? (
-              props.externalStation.src.replace("https://", "https://listen.eternityready.com/stream-proxy/")
+              "https://proxy.eternityready.com/?url=" + encodeURIComponent(props.externalStation.src)
           ) : station.url,
           options
       );
