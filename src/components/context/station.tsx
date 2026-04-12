@@ -28,9 +28,6 @@ export const StationProvider = (props) => {
 
         const data = await response.json();
         let station_result = data;
-        station_result.forEach((station) => {
-          station.url = "https://proxy.eternityready.com/?url=" + encodeURIComponent(station.url);
-        });
         console.log("Stations loaded", station_result);
         setStationsList(station_result);
         setloadingStations(false);
