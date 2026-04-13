@@ -200,7 +200,7 @@ export const PlayerProvider = (props) => {
         },
       });
 
-      if (playerIsLoaded) {
+      if (playerIsLoaded || props?.externalStation) {
         setPlayerState("loading");
         await playerListener.play();
         playerListener.audioElement.volume = playerVolume;
